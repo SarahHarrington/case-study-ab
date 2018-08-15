@@ -15,29 +15,18 @@ JavaScript source file that runs the samples from above, a tester should be able
 
 //regEx.test
 const strings = ['abcde', '0abcd', '^abcd', 'ABCDE', '@fsD983'];
-const regex = /[^a-zA-Z0-9]/;
+// const regex = /[^a-zA-Z0-9]/;
+const regex = /\W/;
 
 strings.forEach(string => {
   console.log(string, regex.test(string));
 })
 
 //regex.match
-// const words = ['foobar', 'coobar', 'toobar', 'barfoo', 'bafoor', 'foooo', 'foot', 'fobart', 'FOOSBALL'];
 const words = 'foobar coobar toobar barfoo bafoor foooo foot fobart';
-const regWords = /foo/gi;
-let fooWords = [];
+// words.match(/\w(foo)/g)
 
-function fooCheck(words) {
-  words.forEach(word => {
-    if (word.match(regWords) !== null) {
-      fooWords.push(word);
-    }
-  })
-  return fooWords;
-}
+console.log(words.match(/(foo)/g));
 
-console.log(words.match(regWords));
 
-// fooCheck(words);
-// console.log(fooWords);
 
