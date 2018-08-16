@@ -40,7 +40,6 @@ function removeDuplicates(string) {
   }, {});
 
   let allTheLetters = newString.join('');
-  
 
   console.log('letter count', countedLetters);
   console.log('newString', allTheLetters);
