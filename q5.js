@@ -10,66 +10,70 @@ Those numbers for which this process completes in a result of 1 are happy number
 while those that do not complete in a result of 1 are unhappy numbers (or sad numbers)". */
 
 let number = 49;
-let loops = 0;
-let originalNumber;
 let happyNumbers = [];
-let tempNumbers = [];
-let happyNumber;
-
-// function isItHappy(number) {
-//   tempNumbers.push(number);
-//   let numArr = number.toString().split('');
-//   let tempArr = [];
-//   for (let i = 0; i < numArr.length; i++) {
-//     tempArr.push(Math.pow(parseInt(numArr[i]), 2))
-//   }
-//   let arrTotal = tempArr.reduce((accum, currentValue) => accum + currentValue, 0);
-//   if (arrTotal === 1) {
-//     happyNumber = tempNumbers.slice(0, 1)
-//     console.log(parseInt(happyNumber.toString('')));
-//     happyNumbers = [...happyNumber];
-//     isItHappy(happyNumber + 1);
-//   }
-//   else {
-//     loops = loops + 1;
-//     if (loops < 100) {
-//       isItHappy(arrTotal);
-//     }
-//     else {
-//       console.log('all up in this else')
-//       loops = 0;
-//       isItHappy(happyNumber + 1);
-//     }
-//   }
-// }
+let tempNumberHolder = 0;
+let loopCount = 0;
 
 function isItHappy(number) {
-  let tempNum = number;
-  tempNumbers.push(number);
-  while (happyNumbers.length < 5) {
-    while (tempNum !== 1) {
-      console.log(tempNum)
-      let numArr = tempNum.toString().split('');
-      let tempArr = [];
-      for (let i = 0; i < numArr.length; i++) {
-        tempArr.push(Math.pow(parseInt(numArr[i]), 2))
-      }
-      tempNum = tempArr.reduce((accum, currentValue) => accum + currentValue, 0);
-      loops = loops + 1;
-      console.log('loops', loops)
-      if (loops === 100) {
-        console.log('in the loop if, hit 100')
-        tempNum = happyNumbers[happyNumbers.length - 1];
-        loops = 0;
-        console.log('in the loop if, hit 100', loops)
-        break;
-      }
+  console.log(number)
+  tempNumberHolder = number;
+  while (number !== 1) {
+    console.log('first while')
+    loopCount = loopCount + 1;
+    let numArr = number.toString().split('');
+    let tempArr = [];
+    for (let i = 0; i < numArr.length; i++) {
+      tempArr.push(Math.pow(parseInt(numArr[i]), 2))
     }
-    happyNumber = tempNumbers.slice(0, 1);
-    happyNumbers = [...happyNumber];
+    number = tempArr.reduce((accum, currentValue) => accum + currentValue, 0);
+    return (number == 1);
   }
-  console.log(happyNumbers);
+  console.log('got a happy number', happyNumbers)
+  console.log('number', number);
+  console.log('tempNumberHolder', tempNumberHolder);
+  while (happyNumbers.length < 5) {
+    console.log('second while')
+    while (!isItHappy(number)) {
+      tempNumberHolder = tempNumberHolder + 1;
+      number = tempNumberHolder;
+    }
+    happyNumbers.push(tempNumberHolder);
+    console.log('in the happy number while')
+  }
 }
 
-
 isItHappy(number);
+
+// function happy_number(num) {
+//   let m, n;
+//   let array = [];
+
+//   while (num != 1 && array[num] !== true) {
+//     array[num] = true;
+//     console.log(array)
+//     m = 0;
+//     while (num > 0) {
+//       n = num % 10;
+//       m += n * n;
+//       num = (num - n) / 10;
+//     }
+//     num = m;
+//   }
+//   console.log('right before the return', num == 1);
+//   return (num == 1); 
+// }
+
+// let cnt = 5;
+// var num = 1;
+// let f5 = '';
+
+// while (cnt-- > 0) {
+//   while (!happy_number(num)) {
+//     num ++;
+//   }
+//   f5 = f5 + (num + ', ');
+//   num++;
+// }
+
+
+// console.log('First 5 happy numbers are: ' +f5)

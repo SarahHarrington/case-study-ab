@@ -13,9 +13,9 @@ Deliverable:
 JavaScript source file that runs the samples from above, a tester should be able to copy and paste the code from the file into the browser console to execute and verify */
 
 
+/* I'm not super familiar with Regex so I'm not sure if there would be a better way to do this first one not involving a loop */
 //regEx.test
 const strings = ['abcde', '0abcd', '^abcd', 'ABCDE', '@fsD983'];
-// const regex = /[^a-zA-Z0-9]/;
 const regex = /\W/;
 
 strings.forEach(string => {
@@ -24,7 +24,7 @@ strings.forEach(string => {
 
 //regex.match
 const words = 'foobar coobar toobar barfoo bafoor foooo foot fobart';
-console.log(words.match(/(foo)/g));
+console.log(words.match(/([a-zA-Z]*foo[a-zA-Z]*)/g));
 
 
 
