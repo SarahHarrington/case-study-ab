@@ -24,8 +24,6 @@ strings.forEach(string => {
 
 //regex.match
 const words = 'foobar coobar toobar barfoo bafoor foooo foot fobart';
-// words.match(/\w(foo)/g)
-
 console.log(words.match(/(foo)/g));
 
 

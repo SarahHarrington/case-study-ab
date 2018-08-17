@@ -35,7 +35,6 @@ function removeDuplicates(string) {
       allLetters[letter] = 1;
       newString.push(letter);
     }
-    // console.log(allLetters);
     return allLetters;
   }, {});
 
@@ -43,6 +42,7 @@ function removeDuplicates(string) {
 
   console.log('letter count', countedLetters);
   console.log('newString', allTheLetters);
+  return allTheLetters;
 }
 
 removeDuplicates(string);

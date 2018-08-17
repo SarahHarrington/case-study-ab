@@ -14,7 +14,7 @@ Deliverable:
 A JavaScript source file that runs the samples from above, a tester should be able to copy 
 and paste the code from the file into the browser console to execute and verify */
 
-let string = 'ZeBraZrCools';
+let string = 'Example';
 const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
@@ -44,7 +44,7 @@ function jumbleTheWord(string) {
   }
 
   console.log(newWord.join(''));
-
+  return newWord.join('');
 }
 
 jumbleTheWord(string);
